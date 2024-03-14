@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<body class="white-background">
+{% include "menu_bar.html" %}
+
+<div class="container">
+    <div class="login-page">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo_img-removebg-preview.png') }}" alt="Logo">
+        </div>
+        <div class="autorization">
+            <form action="/sign-up" class="form_logging" method="post">
+                <div class="logging_text">
+                    <h6 class="text_log">Реєстрація</h6>
+                    <h6 class="text_log_n">VAG-SHPK</h6>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-logging" id="username" name="username" placeholder="Ваше ім'я">
+                    {% if name_error %}
+                        <p class="error-message">{{ name_error }}</p>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-logging" id="phone_number" name="phone_number" placeholder="Телефон">
+                    {% if phone_error %}
+                        <p class="error-message">{{ phone_error }}</p>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password"
+                           placeholder="Введіть пароль">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="country">Локація</label>
+                    <select class="form-control" id="selected_country" name="selected_country">
+                        <option value="">Оберіть місто</option>
+                        {% for country_item in country %}
+                            <option value="{{ country_item.id }}">{{ country_item.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% if integrity_error %}
+                    <p class="error-message">Такий користувач вже існує</p>
+                {% endif %}
+                <button type="submit" class="btn-logging">Зареєструватися</button>
+                <div class="another_log">
+                    <p>Вже маєте аккаунт? <a href="/login">Увійдіть</a>
+                    </p>
+                </div>
+
+
+                <div class="contact-info-log">
+                    <p>Виникли питання?</p>
+                    <p>Служба турботи про користувачів:</p>
+                    <p>(067) 431-82-29, 0-800-21-00-12, (0432) 555-213</p>
+                </div>
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+    <script>
+        // При події, яка спричиняє перезавантаження сторінки (наприклад, submit форми або клік на кнопку з перезавантаженням), збережіть значення полів у localStorage:
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            // Зберегти значення полів у localStorage
+            localStorage.setItem('field1', document.getElementById('field1').value);
+            localStorage.setItem('field2', document.getElementById('field2').value);
+            // і так далі для інших полів
+        });
+
+        // При завантаженні сторінки перевірте, чи є збережені значення у localStorage і встановіть їх у відповідні поля форми:
+        window.addEventListener('load', function () {
+            var field1Value = localStorage.getItem('field1');
+            var field2Value = localStorage.getItem('field2');
+            // і так далі для інших полів
+
+            // Встановити значення у відповідні поля форми
+            document.getElementById('field1').value = field1Value;
+            document.getElementById('field2').value = field2Value;
+            // і так далі для інших полів
+        });
+
+    </script>
+
+</body>
+</html>

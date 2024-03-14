@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<body class="white-background">
+{% include "menu_bar.html" %}
+
+<div class="container">
+    <main class="container_user">
+        <div class="user_info">
+            {% if user %}
+                <h2 style="font-size: 40px;">Привіт, {{ user.name }}!</h2>
+                <section>
+                    <h3 style="font-size: 20px;">Особиста інформація</h3>
+                    <p>ID: {{ user.id }}</p>
+                    <p><img src="/static/images/calendar-days-regular.svg"
+                            class="icon-image">: {{ user.registration_date }}</p>
+                    <p><img src="/static/images/phone-solid.svg" class="icon-image">
+                        : 0{{ user.phone_number }}</p>
+                    <p><img src="/static/images/loc.svg" class="icon-image">
+                        : {{ user.country.name }}</p>
+
+                </section>
+            {% else %}
+                <p>You are not logged in.</p>
+            {% endif %}
+        </div>
+
+        <hr class="clearfix">
+
+        <div class="user_ads">
+            <h3>Мої оголошення</h3>
+            <hr>
+
+            <div style="padding-bottom: 10px;" class="sort-options">
+                <select onchange="location = this.value;">
+                    <option value="/user-dashboard" class="sort-option">Сортування</option>
+                    <option value="/user-dashboard?sort_by=price_asc" class="sort-option">Ціна (зростаюча)</option>
+                    <option value="/user-dashboard?sort_by=price_desc" class="sort-option">Ціна (спадаюча)</option>
+                    <option value="/user-dashboard?sort_by=date_old" class="sort-option">Дата (нові)</option>
+                    <option value="/user-dashboard?sort_by=date_new" class="sort-option">Дата (старі)</option>
+                </select>
+            </div>
+
+
+            <div class="user_car-list">
+                {% if cars %}
+                    <div class="user_car-items">
+                        {% for car in cars %}
+                            <div class="user_car-item">
+                                <div class="user_car-image-container">
+                                    <img src="{{ car.image_url }}" alt="{{ car.model }}" class="user_car-image">
+                                </div>
+                                <div class="user_car-details">
+                                    <a class="a_user_car-title" href="{{ url_for('car_details', car_id=car.id) }}"
+                                       class="user_action-button">{{ car.name }} {{ car.model }}</a>
+                                    <p class="user_car-price">Ціна: ${{ car.price }}</p>
+                                    <p class="user_car-price">Дата публікації: {{ car.registration_date.strftime('%Y-%m-%d') }}</p>
+
+
+                                    <div class="user_car-actions">
+                                        <a href="{{ url_for('edit_car', car_id=car.id) }}" class="icon-image1"><img
+                                                src="/static/images/pen-to-square-solid.svg" alt="Edit"></a>
+
+
+                                        <a href="{{ url_for('delete_car', car_id=car.id) }}"
+                                           class="icon-image1"><img src="/static/images/trash-can-solid.svg"
+                                                                    alt="Delete"></a>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                {% else %}
+                    <p>У вас ще немає створених оголошень</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

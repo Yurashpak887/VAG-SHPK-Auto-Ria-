@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<body>
+{% include "menu_bar.html" %}
+
+<div class="container">
+    <div style="padding-top:10px" class="car-info-header">
+        <p>Б.у авто / {{ car.name }} / {{ car.model }}</p>
+
+    </div>
+
+    <script>
+        document.querySelector('.car-info-header a').addEventListener('click', function (event) {
+            event.preventDefault();
+            const carId = {{ car.id }}; // Отримати id авто зі змінної на сервері
+            history.pushState({}, '', '/car/' + carId);
+            // Тут ви також можете оновити вміст сторінки за допомогою AJAX
+        });
+
+    </script>
+
+    <div class="info-car">
+        <div class="details-container-car-info">
+            <div class="details-combined-container">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/' ~ extract_filename_from_path(car.image_url)) }}"
+                         alt="Image">
+                </div>
+
+                <div class="details-car-info">
+                    <h6>{{ car.name }} {{ car.model }}</h6>
+                    <p>Перегляди: {{ views }}</p>
+
+                        <p id="font_price">$ {{ car.price }}</p>
+                        <p>Місто: {{ car.user.country.name }}</p>
+
+                    <hr id="hrka">
+                    <ul class="details-car-features">
+                        <li class="left-item">Пробіг: {{ car.mileage }} miles</li>
+                        <li class="right-item">Рік: {{ car.year }} </li>
+                        <li class="left-item">Двигун: {{ car.engine }}</li>
+                        <li class="right-item">Колір: {{ car.color }}</li>
+                    </ul>
+                    <hr id="hrka">
+
+                    <p><img src="/static/images/calendar-days-regular.svg"
+                            class="icon-image"> Оголошення створене: {{ car.registration_date.strftime('%Y-%m-%d') }}
+                    </p>
+                    <div class="car_user_info">
+                        <p style="font-size:14px">Власник: {{ car.user.name }}</p>
+                        <p style="font-size:14px">Всього оголошень власника: {{ count_of_user_ads }}</p>
+                        <p style="font-size:14px">Телефон: 0{{ car.user.phone_number }}</p>
+                        <a href="tel:0{{ car.user.phone_number }}" class="toggle-label">Зателефонувати</a>
+
+                    </div>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            const contactToggle = document.getElementById("contact-toggle");
+                            const callButton = document.getElementById("toggle-label");
+                            const phoneNumber = "0{{ car.user.phone_number }}"; // Замініть на номер телефону власника
+
+                            contactToggle.addEventListener("change", function () {
+                                if (this.checked) {
+                                    callButton.style.display = "block";
+                                } else {
+                                    callButton.style.display = "none";
+                                }
+                            });
+
+                            callButton.addEventListener("click", function () {
+                                window.location.href = "tel:" + phoneNumber;
+                            });
+                        });
+                    </script>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="else_description">
+            <div class="more_details_car">
+                <h3>* Опис:</h3>
+
+                <p>{{ car.description }}</p>
+            </div>
+            <div class="more_details_car">
+                <h3>* Характеристики:</h3>
+                <br>
+                <p><span>Пробіг:</span> {{ car.mileage }} км</p>
+                <hr>
+                <p><span>Коробка:</span> Автомат</p>
+                <hr>
+                <p><span>Потужність:</span> {{ car.power }} к.с.</p>
+                <hr>
+                <p><span>Колір:</span> {{ car.color }}</p>
+                <hr>
+                <p><span>Місто:</span> {{ car.user.country.name }}</p>
+                <hr>
+                <p><span>Тип палива:</span> {{ car.fuel }}</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

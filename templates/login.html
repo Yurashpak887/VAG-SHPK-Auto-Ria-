@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<body class="white-background">
+{% include "menu_bar.html" %}
+
+
+<div class="container">
+    <div class="login-page">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo_img-removebg-preview.png') }}" alt="Logo">
+        </div>
+
+        <div class="autorization">
+
+
+            <form action="/login" class="form_logging" method="post">
+                <div class="logging_text">
+                    <h6 class="text_log">Вхід</h6>
+                    <h6 class="text_log_n">VAG-SHPK</h6>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="phone_number" name="phone_number"
+                           placeholder="Введіть номер телефону"></div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Введіть пароль">
+                </div>
+                <button type="submit" class="btn-logging">Вхід</button>
+
+                {% if log_error %}
+                    <p class="error-message">{{ log_error }}</p>
+                {% endif %}
+
+                <div class="another_log">
+                    <p>Ще не зареєструвались? <a href="/sign-up">Реєстрація</a>
+                    </p>
+                </div>
+
+                <div class="contact-info-log">
+                    <p>Виникли питання?</p>
+                    <p>Служба турботи про користувачів:</p>
+                    <p>(067) 431-82-29, 0-800-21-00-12, (0432) 555-213</p>
+                </div>
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>

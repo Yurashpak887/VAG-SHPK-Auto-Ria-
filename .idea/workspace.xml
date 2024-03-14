@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9331e1eb-9abb-4581-b998-a347ae8fdcbe" name="Changes" comment="17.08">
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#ib_16384_0.dblwr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo11" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo12_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo12_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo13_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo13_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo14_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo14_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo15_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo15_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo16_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo16_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo17_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo17_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo18_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo18_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo19_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo19_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo20_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo20_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo21_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo21_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo22_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo22_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo23_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo23_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo24_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo24_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo25_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo25_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo26_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo26_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo27_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo27_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo28_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo28_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo29_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo29_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo30_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo30_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo31_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo31_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo32_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo32_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo33_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo33_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo34_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo34_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo35_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo35_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo36_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo36_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo37_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo37_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo38_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo38_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo39_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo39_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo40_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo40_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo41_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo41_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo42_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_redo/#ib_redo42_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_1.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_1.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_10.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_10.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_2.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_2.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_3.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_3.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_4.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_4.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_5.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_5.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_6.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_6.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_7.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_8.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/#innodb_temp/temp_9.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/auto.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/auto.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000048" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000049" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000050" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000051" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000052" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000053" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000054" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000055" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000056" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.000057" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/binlog.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/ib_buffer_pool" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/ibtmp1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/mysql.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/undo_001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/undo_002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/yura01/car.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/yura01/car.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/mysql/yura01/user.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/docker/mysql/yura01/user.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/get_course.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/get_course.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/add_car.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/add_car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/car_details.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/car_details.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/user_dashboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user-dashboard.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/migrations/versions/4233e5c97696_24_08.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2Tn9r3gq2SDEwBa8qSVWBgqW4ZB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yurashpak/PycharmProjects/Project/my_first_project1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.get_course">
+    <configuration name="get_course" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="my_first_project1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.10 (my_first_project1)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/helpers" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/helpers/get_course.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_first_project1" type="PythonConfigurationType" factoryName="Python">
+      <module name="my_first_project1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.get_course" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9331e1eb-9abb-4581-b998-a347ae8fdcbe" name="Changes" comment="" />
+      <created>1691668173124</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691668173124</updated>
+      <workItem from="1691668174229" duration="10340000" />
+      <workItem from="1692174345261" duration="741000" />
+      <workItem from="1692178476773" duration="9414000" />
+      <workItem from="1692191607261" duration="5219000" />
+      <workItem from="1692209891048" duration="9102000" />
+      <workItem from="1692527838452" duration="14950000" />
+      <workItem from="1692629771522" duration="11989000" />
+      <workItem from="1692714025269" duration="6538000" />
+      <workItem from="1692721697443" duration="349000" />
+      <workItem from="1692805802388" duration="535000" />
+      <workItem from="1692808700307" duration="558000" />
+      <workItem from="1692870766082" duration="319000" />
+      <workItem from="1692901828442" duration="7000" />
+      <workItem from="1692901836207" duration="5859000" />
+      <workItem from="1693152585170" duration="15825000" />
+      <workItem from="1693392680958" duration="1215000" />
+      <workItem from="1693399979825" duration="20000" />
+      <workItem from="1693404974148" duration="19000" />
+      <workItem from="1693422488273" duration="5302000" />
+      <workItem from="1693571257938" duration="11323000" />
+      <workItem from="1693664986758" duration="7000" />
+      <workItem from="1693683397430" duration="5595000" />
+      <workItem from="1693743037543" duration="7000" />
+      <workItem from="1693745959359" duration="5084000" />
+      <workItem from="1693856196014" duration="606000" />
+      <workItem from="1694087347987" duration="48000" />
+      <workItem from="1694087514030" duration="20000" />
+      <workItem from="1694176748584" duration="4614000" />
+      <workItem from="1694370009292" duration="11000" />
+      <workItem from="1694597787672" duration="110000" />
+      <workItem from="1694598037116" duration="40000" />
+      <workItem from="1694598161067" duration="155000" />
+      <workItem from="1697894691280" duration="162000" />
+      <workItem from="1697898748130" duration="44000" />
+      <workItem from="1697898807994" duration="34000" />
+      <workItem from="1697899918265" duration="141000" />
+      <workItem from="1698500816426" duration="852000" />
+      <workItem from="1698592451007" duration="673000" />
+      <workItem from="1698678507427" duration="179000" />
+      <workItem from="1698747048721" duration="3000" />
+      <workItem from="1698761292164" duration="3000" />
+      <workItem from="1698930849916" duration="2000" />
+      <workItem from="1698930857933" duration="17000" />
+      <workItem from="1700156326587" duration="233000" />
+      <workItem from="1700157150260" duration="650000" />
+      <workItem from="1701091115327" duration="149000" />
+      <workItem from="1701277944831" duration="244000" />
+      <workItem from="1701278231727" duration="8000" />
+      <workItem from="1701278255042" duration="111000" />
+      <workItem from="1701278611053" duration="165000" />
+    </task>
+    <task id="LOCAL-00001" summary="8.10">
+      <option name="closed" value="true" />
+      <created>1691669776190</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691669776190</updated>
+    </task>
+    <task id="LOCAL-00002" summary="17.08">
+      <option name="closed" value="true" />
+      <created>1692218953061</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692218953061</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="16.08" />
+    <MESSAGE value="8.10" />
+    <MESSAGE value="17.08" />
+    <option name="LAST_COMMIT_MESSAGE" value="17.08" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/my_first_project1$get_course.coverage" NAME="get_course Coverage Results" MODIFIED="1693423810057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/helpers" />
+  </component>
+</project>

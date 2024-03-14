@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<body class="white-background">
+{% include "menu_bar.html" %}
+
+
+<div class="container">
+
+    <h6 style="font-size: 40px;font-family: Arial, sans-serif; ">Авто в наявності</h6>
+
+
+    <div class="search-form">
+        <form class="car-search" id="search-form" action="{{ url_for('main') }}" method="GET">
+
+            <div class="left-section">
+                <select id="mark" name="selected_mark" onchange="updateModelOptions(); submitForm();">
+                    <option value="" disabled selected hidden>Виберіть марку</option>
+                    {% for mark in marks %}
+                        <option value="{{ mark.name }}"
+                                {% if selected_mark == mark.name %}selected{% endif %}>{{ mark.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <div class="range-input">
+                    <h6 style="width:100%;">Рік випуску</h6>
+
+                    <input type="number" id="year_from" name="year_from"
+                           value="{{ request.args.get('year_from', '') }}"
+                           placeholder="Від" min="1970" onchange="submitForm()">
+
+                    <span>-</span>
+                    <input type="number" id="year_to" name="year_to"
+                           value="{{ request.args.get('year_to', '') }}"
+                           placeholder="До" onchange="submitForm()">
+                </div>
+
+                <div class="range-input">
+                    <h6 style="width:44%;">Локація</h6>
+                    <select id="country" name="selected_country" onchange="updateModelOptions(); submitForm();">
+                    <option value="" disabled selected hidden>Виберіть місто</option>
+                        {% for country in countries %}
+                            <option value="{{ country.name }}"
+                                    {% if selected_country == country.name %}selected{% endif %}>
+                                {{ country.name }}</option>
+                        {% endfor %}
+
+                    </select>
+
+
+
+
+
+
+                </div>
+
+                <a href="{{ url_for('main') }}" class="clear-button">Очистити</a>
+
+            </div>
+
+            <div class="right-section">
+                <select id="selected_model" name="selected_model" onchange="submitForm();">
+                    <option value="" disabled selected hidden>Виберіть модель</option>
+                    {% for model in models_data %}
+                        <option value="{{ model.name }}"
+                                {% if selected_model_id == model.name %}selected{% endif %}>{{ model.name }}</option>
+                    {% endfor %}
+                </select>
+
+
+                <div class="range-input">
+                    <h6 style="width:100%;">Пробіг</h6>
+
+                    <input type="number" id="mileage_from" name="mileage_from"
+                           value="{{ request.args.get('mileage_from', '') }}"
+                           placeholder="Від" step="10" min="0" onchange="submitForm()">
+
+                    <span>-</span>
+                    <input type="number" id="mileage_to" name="mileage_to"
+                           value="{{ request.args.get('mileage_to', '') }}"
+                           placeholder="До" onchange="submitForm()">
+                </div>
+
+
+                <div class="range-input">
+                    <h6 style="width:44%;">Тип палива</h6>
+                    <select id="fuel_type" name="selected_fuel_type" onchange="submitForm();">
+                        <option value="" disabled hidden>Виберіть тип палива</option>
+                        <option value="Бензин"
+                                {% if request.args.get('selected_fuel_type') == 'Бензин' %}selected{% endif %}>Бензин
+                        </option>
+                        <option value="Дизель"
+                                {% if request.args.get('selected_fuel_type') == 'Дизель' %}selected{% endif %}>Дизель
+                        </option>
+                        <option value=""
+                                {% if not request.args.get('selected_fuel_type') %}selected{% endif %}>Будь-який
+                        </option>
+                    </select>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+
+    <script>
+    var markSelect = document.getElementById('mark');
+    var modelSelect = document.getElementById('selected_model');
+
+        markSelect.addEventListener('change', function () {
+        var selectedMark = markSelect.value;
+        var selectedModel = modelSelect.value;
+
+        // Змінюємо значення моделі на "Виберіть модель" при зміні марки
+        modelSelect.selectedIndex = 0;
+
+        // Оновлюємо форму
+        submitForm();
+    });
+    </script>
+
+
+    <script>
+    var markSelect = document.getElementById('mark');
+    var modelSelect = document.getElementById('selected_model');
+    var yearFromInput = document.getElementById('year_from');
+    var yearToInput = document.getElementById('year_to');
+    var mileageFromInput = document.getElementById('mileage_from');
+    var mileageToInput = document.getElementById('mileage_to');
+
+    function updateModelOptions() {
+        var selectedMark = markSelect.value;
+        if (!selectedMark) {
+            modelSelect.selectedIndex = 0; // Скидаємо вибір моделі на "Виберіть модель"
+            submitForm(); // Оновлюємо форму після скидання вибору моделі
+        }
+    }
+
+    // Викликаємо функцію при завантаженні сторінки для початкового стану
+    updateModelOptions();
+    </script>
+
+    <script>
+    function submitForm() {
+        document.getElementById("search-form").submit()
+    }
+    </script>
+
+
+    <hr>
+
+    <div class="sort-options">
+        <select onchange="location = this.value;">
+            <option value="/" class="sort-option">Сортування</option>
+            <option value="/?sort_by=price_asc{% if mark_name %}&mark_name={{ mark_name }}{% endif %}"
+                    class="sort-option">Ціна (зростаюча)
+            </option>
+            <option value="/?sort_by=price_desc{% if mark_name %}&mark_name={{ mark_name }}{% endif %}"
+                    class="sort-option">Ціна (спадаюча)
+            </option>
+            <option value="/?sort_by=date_old{% if mark_name %}&mark_name={{ mark_name }}{% endif %}"
+                    class="sort-option">Дата (нові)
+            </option>
+            <option value="/?sort_by=date_new{% if mark_name %}&mark_name={{ mark_name }}{% endif %}"
+                    class="sort-option">Дата (старі)
+            </option>
+        </select>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="statistics">
+        <p>{{ count_of_ads }} пропозиції ● За останній день: {{ count_of_cars_day }}</p>
+    </div>
+
+    <div class="car-list">
+
+        {% for car in cars %}
+            <div class="car-card">
+                <img src="{{ car.image_url }}" alt="{{ car.model }}" class="car-image">
+                <div class="car-details">
+                    <h3 class="car-title">{{ car.name }} {{ car.model }}</h3>
+                    <p class="car-price">Ціна: ${{ car.price }}</p>
+                    <div class="car-description">
+                        <p style="font-size: 10px;">Створене: {{ car.registration_date.strftime('%Y-%m-%d') }}</p>
+                        <p>{{ car.description|truncate(30, '...') }}</p>
+                        <p style="font-size: 10px;">Власник: {{ car.user.name }}</p>
+                        <p style="font-size: 10px;">Локація: {{ car.user.country.name }}</p>
+
+                    </div>
+
+                    <div class="car-features">
+                        <div class="left-column">
+                            <p>Рік випуску: {{ car.year }}</p>
+                            <p>Пробіг: {{ car.mileage }} км</p>
+                        </div>
+                        <div class="right-column">
+                            <p>Двигун: {{ car.engine }}</p>
+                            <p>Тип палива: {{ car.fuel }}</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ url_for('car_details', car_id=car.id) }}" class="details-button">Деталі</a>
+
+            </div>
+
+        {% endfor %}
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

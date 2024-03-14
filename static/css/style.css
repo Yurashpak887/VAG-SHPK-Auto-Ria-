@@ -1,0 +1,956 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.white-background {
+    background-image: url('/static/images/background.png');
+    background-color: rgba(255, 255, 255, 0.5); /* Прозорий білий колір */
+}
+
+
+.range-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.range-input input {
+    width: 60px; /* Змініть належним чином ширину вводу за потребою */
+}
+
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: 'Roboto', sans-serif; /* Застосовуємо шрифт */
+    z-index: 9999; /* Встановіть високий z-index, щоб меню було завжди поверх інших елементів */
+
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: white;
+    width: 200px;
+    text-align-last: center; /* Розміщення тексту посередині */
+    cursor: pointer;
+
+    position: sticky;
+    top: 0; /* Верхній край вікна браузера */
+    z-index: 1; /* Забезпечуємо правильний порядок накладання */
+}
+
+
+select#mark,
+select#selected_model {
+    z-index: 1;
+    width: 100%;
+}
+
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+select option {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 5px 10px; /* Додаємо розрив між елементами */
+}
+
+/* Важливий стиль для обмеження ширини випадаючого списку */
+select::-ms-expand {
+    display: none;
+}
+
+/* Забезпечення відступу між елементами в випадаючому списку */
+select option + option {
+    margin-top: 5px;
+}
+
+select:not(:focus) {
+    position: static;
+}
+
+
+.menu-items {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-items a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'Lato', sans-serif; /* Застосовуємо шрифт */
+}
+
+.menu-items a:hover {
+    color: #ffc107;
+}
+
+.container {
+    margin-top: 1%; /* Враховуючи висоту меню */
+    padding: 10px;
+
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    transition: width 0.3s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .menu-items {
+        margin-top: 10px;
+    }
+}
+
+
+.details-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    max-width: 100%;
+    width: 100%; /* Додайте цей рядок */
+    margin: 0; /* Додайте цей рядок */
+        row-gap: 80px;
+}
+
+.car-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; /* Додайте цей рядок */
+}
+
+.car-image {
+    width: 100%;
+    height: 60%;
+}
+
+.car-details {
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.car-description {
+    margin: 5px 0; /* Налаштуйте бажані значення відступів */
+}
+
+
+.car-features {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+    margin-top: 0;
+}
+
+.left-column, .right-column {
+    width: 50%;
+}
+
+.left-column p, .right-column p {
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.left-column p::after, .right-column p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -10px;
+    width: 1px;
+    height: 70%;
+    background-color: #ddd;
+}
+
+.car-card .details-button {
+    margin-top: auto;
+    border-radius: 0;
+}
+
+
+.car-search {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    max-width: 100%;
+    overflow: hidden; /* Це для "очищення" float-схеми */
+    border-radius: 0 0 10px 10px; /* Задаємо радіус для нижніх кутів */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 0;
+}
+
+
+.left-section {
+    width: 50%;
+    padding: 3% 5% 5% 5%;
+    position: relative;
+
+
+}
+
+.right-section {
+    width: 50%;
+    padding: 3% 5% 5% 5%;
+}
+
+.clear-button {
+    width: 100%;
+    background-color: #333;
+    justify-content: center;
+    display: flex;
+    align-items: center; /* Додайте вирівнювання по вертикалі */
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    transition: background-color 0.3s, color 0.3s; /* Додайте переходи для фону і кольору тексту */
+}
+
+.clear-button:hover {
+    background-color: #ffc107;
+    color: #333;
+}
+
+
+.search-form {
+
+}
+
+
+#search-form select {
+    margin-bottom: 3%; /* Додайте відступ вниз між select елементами */
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Добавлення авто */
+
+.no-bg {
+    background: none !important;
+    margin-top: 10px;
+}
+
+.add_car_info {
+    font-size: 20px;
+}
+
+
+#image {
+    display: none;
+}
+
+#upload-button {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#upload-button:hover {
+    background-color: #333;
+    color: #ffc107;
+}
+
+.image-preview {
+    display: none;
+    margin-top: 10px;
+    position: relative;
+}
+
+#preview-image {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.remove-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+
+#image-preview {
+    max-width: 200px; /* Максимальна ширина для попереднього перегляду */
+    max-height: 200px; /* Максимальна висота для попереднього перегляду */
+    margin: 10px; /* Додатковий відступ від іншого вмісту */
+
+}
+
+#image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+#add_car_btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Вирівнюємо кнопки зправа */
+}
+
+#add_car_btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#add_car_btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+
+/* Стилі для кнопок в меню */
+.button-sign {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Вирівнюємо кнопки зправа */
+}
+
+.button-sign a {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-sign a:hover {
+    background-color: #ffc107;
+    color: #333;
+}
+
+
+/* Стилі для основного контейнера */
+
+
+.container_user {
+    display: flex;
+    padding: 20px;
+}
+
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.car-card-user {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.user_info {
+    float: left;
+    width: 40%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    animation: fadeInRight 1s forwards;
+
+
+}
+
+.user_ads {
+    float: right;
+    width: 60%;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.user_ads ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user_ads ul li {
+    margin-bottom: 10px;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.icon-image {
+    max-height: 20px;
+}
+
+
+.user_car-list {
+    text-align: center;
+    max-width: 100%;
+}
+
+.user_car-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+
+
+}
+
+.user_car-item {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+
+}
+
+
+.user_car-image-container {
+    width: 100%;
+    height: 60%;
+}
+
+.user_car-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user_car-details {
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.user_car-title {
+    margin-bottom: 5px;
+}
+
+.a_user_car-title:hover {
+    color: #ffc107
+}
+
+.a_user_car-title {
+    color: black;
+    font-size: 30px;
+}
+
+.user_car-price {
+    margin-bottom: 5px;
+}
+
+.user_car-actions {
+    display: flex;
+    gap: 50px;
+    padding: 5px;
+}
+
+.icon-image1 {
+    max-height: 30px;
+    width: 30px;
+}
+
+
+.statistics {
+    margin-top: 20px;
+}
+
+/* Залиште інші стилі без змін */
+.sort-options {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.sort-option {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sort-option:hover {
+    background-color: #ccc;
+}
+
+.container_car {
+    margin-top: 1%; /* Враховуючи висоту меню */
+    padding: 10px;
+
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    transition: width 0.3s ease-in-out;
+}
+
+.more_details_car {
+    padding: 3%;
+}
+
+
+.more_details_car p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Додайте відступ, який вам потрібен */
+}
+
+.info-car {
+    margin-top: 1%;
+    border-radius: 10px;
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.car_user_info {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 4%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+.details-container-car-info {
+    display: flex;
+}
+
+.details-combined-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    height: 60%;
+        overflow: hidden;
+
+}
+
+
+/* styles.css */
+/* styles.css */
+.infocourse {
+  margin-left: auto; /* Зсуваємо блок курсу валют вправо */
+  display: flex;
+  align-items: center;
+    margin-right:30px;
+  gap: 10px;
+
+}
+
+
+.infocourse p {
+  margin: 10px 10px 10px 0; /* Відстань між елементами */
+    font-size: 15px;
+        color: rgb(255, 170, 0);
+:
+}
+
+.image-container {
+    width: 65%;
+    overflow: hidden;
+    text-align: center;
+    height: 100%;
+}
+
+/* Стилі для сповіщення */
+.flash-messages {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    width: 300px; /* Задайте ширину сповіщення за вашим вибором */
+    background-color: #333; /* Задайте кольори, які вам подобаються */
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* По замовчуванню приховувати сповіщення */
+}
+
+
+.flash-messages {
+    /* Решта стилів */
+    display: block; /* Завжди відображати сповіщення */
+}
+
+
+
+.image-container img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.details-car-info {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    color: #666;
+    max-height: 90vh; /* Максимальна висота відносно висоти вікна браузера */
+    overflow: auto; /* Включаємо вертикальний скролінг при необхідності */
+}
+
+
+.details-car-f1{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    white-space: nowrap;
+    max-font-size: 20px;
+}
+
+#hrka {
+    border: none;
+    border-top: 1px solid grey;
+    margin: 10px 0;
+    opacity: 20%;
+}
+
+.details-car-features {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    white-space: nowrap;
+    max-font-size: 20px;
+}
+
+.left-item,
+.right-item {
+    flex-basis: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+
+.left-item {
+    text-align: left;
+}
+
+.right-item {
+    text-align: right;
+}
+
+.details-car-info h6 {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Tahoma, Verdana, sans-serif;
+    text-align: left;
+}
+
+.complectation {
+    font-size: 18px;
+    margin-top: 1px;
+}
+
+
+
+#font_price {
+    font-size: 25px;
+    color: rgb(255, 170, 0);
+    font-weight: bold;
+}
+
+
+.else_description {
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+
+/* Решта стилів тут */
+
+
+/* Решта стилів тут */
+
+/* Решта стилів тут */
+
+/* Решта стилів тут */
+
+.toggle {
+    display: none;
+}
+
+.toggle-label {
+    display: block;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.toggle:checked + .toggle-label + #contact-info {
+    display: block;
+}
+
+#contact-info {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #3498db;
+    border-radius: 5px;
+    color: white;
+}
+
+
+/* logging */
+
+.login-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInRight 1s forwards;
+}
+
+.logo {
+    width: 60%;
+    animation: fadeInLeft 1s forwards;
+}
+
+.autorization {
+    width: 40%;
+    animation: fadeInRight 1s forwards;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.custom-form {
+    background: none; /* Або background: none; */
+    /* Інші стилі для форми */
+}
+
+
+.logging_text {
+    text-align: center;
+    margin: 20px 0; /* Відступи по вертикалі */
+}
+
+.text_log {
+    font-size: 30px; /* Збільшено розмір тексту */
+    font-weight: bold; /* Додано жирний стиль */
+}
+
+
+.text_log_n {
+    color: #ffc107;
+    font-size: 24px; /* Збільшено розмір тексту */
+    font-weight: bold; /* Додано жирний стиль */
+
+}
+
+
+.btn-logging {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    font-size: 20px;
+}
+
+.btn-logging:hover {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.slogan {
+    text-align: center;
+    margin-top: 10px; /* Відступ зверху від логотипу */
+    color: #666; /* Колір тексту слогану */
+    font-size: 30px; /* Розмір шрифту */
+    font-family: 'Indie Flower', cursive; /* Встановлюємо власний шрифт */
+    width: 40%;
+}
+
+#contact-info-log {
+    text-align: left;
+    margin-top: 30px; /* Відступ зверху від кнопки реєстрації */
+    font-size: 16px;
+    color: white;
+}
+
+
+.another_log {
+    margin-top: 10px;
+}

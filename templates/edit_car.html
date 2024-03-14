@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "header.html" %}
+<body class="white-background">
+{% include "menu_bar.html" %}
+<div class="container">
+    <form action="/edit_car/{{ car.id }}" method="post" enctype="multipart/form-data" class="form-control no-bg">
+
+        <p>Заповніть інформацію про ваше авто:</p>
+        <h2 class='add_car_info'>1. Добавте фотографії до вашого оголошення</h2>
+
+
+
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" style="display: none;">
+        <div id="image-preview" class="image-preview">
+            <img id="preview-image"
+                 src="{{ url_for('static', filename='images/' ~ extract_filename_from_path(car.image_url)) }}"
+                 alt="Preview">
+            <span id="remove-image" class="remove-icon">&times;</span>
+        </div>
+        <label id="upload-button" class="btn-logging" for="image">Upload Image</label>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var imageInput = document.getElementById("image");
+                var previewImage = document.getElementById("preview-image");
+                var removeImage = document.getElementById("remove-image");
+                var imagePreview = document.getElementById("image-preview");
+
+                // Завантаження існуючого зображення
+                previewImage.src = "{{ url_for('static', filename='images/' ~ extract_filename_from_path(car.image_url)) }}";
+                imagePreview.style.display = "block";
+
+                imageInput.addEventListener("change", function () {
+                    var file = this.files[0];
+                    if (file) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            previewImage.src = e.target.result;
+                            imagePreview.style.display = "block";
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        previewImage.src = "{{ url_for('static', filename='images/' ~ extract_filename_from_path(car.image_url)) }}";
+                        imagePreview.style.display = "block";
+                    }
+                });
+
+                // Видалення вибраного зображення
+                removeImage.addEventListener("click", function () {
+                    imageInput.value = null;
+                    previewImage.src = "{{ url_for('static', filename='images/' ~ extract_filename_from_path(car.image_url)) }}";
+                    imagePreview.style.display = "none";
+                });
+            });
+
+
+        </script>
+
+
+        <h2 class='add_car_info'>2. Основна інформація</h2>
+
+        <label for="mark">Mark:</label>
+        <select id="mark" name="mark" required disabled>
+            <option value="" disabled selected>{{ car.name }}</option>
+
+        </select><br><br>
+
+        <label for="model">Model:</label>
+        <select id="model" name="model" required disabled>
+            <option value="" disabled selected>{{ car.model }}</option>
+        </select><br><br>
+
+
+        <label for="price">Price:</label>
+        <input type="text" name="price" value="{{ car.price }}" required>
+
+
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" value="{{ car.year }}" required><br><br>
+
+        <label for="mileage">Mileage:</label>
+        <input type="number" id="mileage" name="mileage" step="100" value="{{ car.mileage }}" required><br><br>
+
+        <label for="engine">Engine:</label>
+        <input type="number" id="engine" name="engine" step="0.1" value="{{ car.engine }}" required><br><br>
+
+        <h2 class='add_car_info'>2. Опис, характеристики</h2>
+
+        <label for="power">Потужність (кс):</label>
+        <input type="number" id="power" name="power" step="10" value="{{ car.power }}" required><br><br>
+        <label for="fuel">Тип палива:</label>
+        <select id="fuel" name="fuel" required>
+            <option value="" disabled>Виберіть тип палива</option>
+            <option value="Бензин" {% if car.fuel == 'Бензин' %}selected{% endif %}>Бензин</option>
+            <option value="Дизель" {% if car.fuel == 'Дизель' %}selected{% endif %}>Дизель</option>
+        </select><br><br>
+
+
+        <label for="color">Колір:</label>
+        <select id="color" name="color" required>
+            <option value="Червоний" {% if car.color == "Червоний" %}selected{% endif %}>Червоний</option>
+            <option value="Синій" {% if car.color == "Синій" %}selected{% endif %}>Синій</option>
+            <option value="Зелений" {% if car.color == "Зелений" %}selected{% endif %}>Зелений</option>
+            <option value="Чорний" {% if car.color == "Чорний" %}selected{% endif %}>Чорний</option>
+            <option value="Білий" {% if car.color == "Білий" %}selected{% endif %}>Білий</option>
+            <option value="Срібний" {% if car.color == "Срібний" %}selected{% endif %}>Срібний</option>
+            <option value="Сірий" {% if car.color == "Сірий" %}selected{% endif %}>Сірий</option>
+            <option value="Золотий" {% if car.color == "Золотий" %}selected{% endif %}>Золотий</option>
+            <option value="ПОмаранчевий" {% if car.color == "ПОмаранчевий" %}selected{% endif %}>Помаранчевий</option>
+            <option value="Жовтий" {% if car.color == "Жовтий" %}selected{% endif %}>Жовтий</option>
+            <option value="Коричневий" {% if car.color == "Коричневий" %}selected{% endif %}>Коричневий</option>
+            <option value="Пурпурний" {% if car.color == "Пурпурний" %}selected{% endif %}>Пурпурний</option>
+        </select><br><br>
+
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required>{{ car.description }}</textarea><br><br>
+
+
+        <button type="submit" id="add_car_btn">Save Car</button>
+    </form>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<div class="menu">
+
+    <div class="menu-items">
+
+        {% if user %}
+            <a href="/">Б.у авто</a>
+            <a href="/add_car">Додати авто</a>
+            <a href="#">Контактна інформація</a>
+        {% else %}
+            <a href="/">Б.у авто</a>
+            <a href="#">Контактна інформація</a>
+        {% endif %}
+    </div>
+
+
+    <div class="infocourse">{% if dollar_rate %}
+
+        <p>{{ dollar_rate}} </p>
+        <p>{{ euro_rate  }}</p>
+    {% else %}
+        <p>Dollar rate not available</p>
+    {% endif %}
+    </div>
+    <div class="button-sign">
+        {% if user %}
+            Привіт, {{ user.name }}!
+            <a class="button-close-session" href="/session-close" type="button">Вийти</a>
+            <a class="button-close-session" href="/user-dashboard" type="button">Кабінет</a>
+        {% else %}
+            <a class="button-sign-up" href="/sign-up" type="button">Зареєструватись</a>
+            <a class="button-login" href="/login" type="button">Увійти</a>
+        {% endif %}
+    </div>
+
+</div>
+
+<div class="container">
+    <!-- Тут може бути ваш контент -->
+</div>
+
+
+
+
